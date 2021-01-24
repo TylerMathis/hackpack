@@ -1,3 +1,4 @@
 # hackpack
- My personal hackpack for competitive programming 
+ My personal hackpack for competitive programming
+ 
  Folder structure speaks for itself
