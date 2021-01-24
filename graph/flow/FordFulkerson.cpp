@@ -8,6 +8,8 @@ struct FordFulkerson {
 	vector<vector<int>> cap;  vector<bool> vis;  int n, s, t, oo = (int)(1E9);
 	FordFulkerson(int size) { n = size + 2;  s = n - 2;  t = n - 1;  cap = vector<vector<int>>(n, vector<int>(n, 0)); }
 	void add(int v1, int v2, int c) {  cap[v1][v2] = c;  }
+    void conS(int v, int c) { cap[s][v] = c; }
+    void conT(int u, int c) { cap[u][t] = c; }
 	int ff() {
 		vis = vector<bool>(n, false);  int f = 0;
 		while (true) {
