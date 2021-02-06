@@ -14,7 +14,7 @@ struct FastMatExpo {
         ident = vector<vector<T>>(n, vector<T>(n, 0));
         for (int i = 0; i < n; i++) ident[i][i] = 1;
     }
-    vector<vector<T>> modPow(ll pow) { return res = applyMod(fastPow(scalar, pow)); }
+    vector<vector<T>> modPow(ll pow) { return res = applyMod(fastPow(scalar, pow-1)); }
     vector<vector<T>> fastPow(vector<vector<T>> mat, ll pow) {
         mat = applyMod(mat);
         if (pow==0) return ident;
@@ -36,10 +36,10 @@ struct FastMatExpo {
                 mat[i][j] %= m;
         return mat;
     }
-    ll getAns(ll index) {
+    ll getAns() {
         ll ans = 0;
         for (int i = 0; i < n; i++)
-            ans = (ans + ((res[index][i] * mult[i][index]) % m)) % m;
+            ans = (ans + ((res[0][i] * mult[i][0]) % m)) % m;
         return ans;
     }
 };
